@@ -21,6 +21,8 @@ import historyHandler from "./reducers/history-handler.js"
 
 import useEventCallback from "use-event-callback"
 import makeImmutable, { without } from "seamless-immutable"
+const img0 = require('../Images/403_vector.png')
+const img1 = require('../Images/403.png')
 
 type Props = {
   taskDescription?: string,
@@ -160,7 +162,26 @@ export const Annotator = ({
   }, [selectedImage])
 
   if (!images && !videoSrc)
-    return 'Missing required prop "images" or "videoSrc"'
+      return (
+        <div>
+          
+          <div style={{marginTop: '100px'}}>
+            <img src={img0} alt="ilabel"/>
+          </div>
+          <div class="alert text-danger" role="alert">
+            <img src="https://cdn.pixabay.com/photo/2015/06/09/16/12/error-803716_960_720.png" alt="x" style={{width: '23px'}}/> <span>File upload process could not be uploaded.</span>
+            {/* <ul style={{listStyle: 'number', color: 'red'}}> */}
+              <li style={{paddingTop: '10px'}}>Please refresh the page to go back</li>
+            {/* </ul> */}
+          </div>
+          {/* <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">Hints for Running Project!</h4>
+            <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+            <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+          </div> */}
+        </div>
+      )
+    // return 'Missing required prop "images" or "videoSrc"'
 
   return (
     <SettingsProvider>

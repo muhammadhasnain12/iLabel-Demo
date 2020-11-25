@@ -4,6 +4,8 @@ import logo_f from './Images/i-label-white.png'
 export class Header extends Component {
     expireLocalStorage=()=>{
         localStorage.removeItem("Url");
+        localStorage.removeItem("Type");
+        localStorage.removeItem("Class");
     }
     render() {
         return (

@@ -109,6 +109,9 @@ body {
 .icon-theme-color {
   color: #309688 !important;
 }
+.btn_box{
+   width: 170px;
+}
 
 .btn-class-none {
   border: none !important; 

@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useMemo, useState } from "react"
 import { styled } from "@material-ui/core/styles"
 import useEventCallback from "use-event-callback"
 import { useSettings } from "../SettingsProvider"
-
+const img0 = require('../Images/403_vector.png')
 const Video = styled("video")({
   zIndex: 0,
   position: "absolute",
@@ -110,13 +110,24 @@ export default ({
   })
   const onImageError = useEventCallback((event) => {
     setError(
-      `Could not load image\n\nMake sure your image works by visiting ${
-        imageSrc || videoSrc
-      } in a web browser. If that URL works, the server hosting the URL may be not allowing you to access the image from your current domain. Adjust server settings to enable the image to be viewed.${
-        !useCrossOrigin
-          ? ""
-          : `\n\nYour image may be blocked because it's not being sent with CORs headers. To do pixel segmentation, browser web security requires CORs headers in order for the algorithm to read the pixel data from the image. CORs headers are easy to add if you're using an S3 bucket or own the server hosting your images.`
-      }\n\n If you need a hand, reach out to the community at universaldatatool.slack.com`
+      <div>
+      <div style={{marginTop: '100px'}}>
+      <img src={img0} alt="ilabel"/>
+    </div>
+    <div class="alert text-danger" role="alert">
+      <img src="https://cdn.pixabay.com/photo/2015/06/09/16/12/error-803716_960_720.png" alt="x" style={{width: '23px'}}/> <span>File upload process could not be uploaded.</span>
+      <li style={{paddingTop: '10px'}} className="pl-5">Please go back and upload image</li>
+      
+      
+    </div>
+  </div>
+      // `Could not load image\n\nMake sure your image works by visiting ${
+      //   imageSrc || videoSrc
+      // } in a web browser. If that URL works, the server hosting the URL may be not allowing you to access the image from your current domain. Adjust server settings to enable the image to be viewed.${
+      //   !useCrossOrigin
+      //     ? ""
+      //     : `\n\nYour image may be blocked because it's not being sent with CORs headers. To do pixel segmentation, browser web security requires CORs headers in order for the algorithm to read the pixel data from the image. CORs headers are easy to add if you're using an S3 bucket or own the server hosting your images.`
+      // }\n\n If you need a hand, reach out to the community at universaldatatool.slack.com`
     )
   })
 

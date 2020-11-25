@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { Login, ANNOTATIONTOOL, HOMEPAGE, EDITOR } from './routes'
-
 import Annotator from "./Annotator"
 import DemoSite from "./DemoSite"
 import MainLogin from './login'
